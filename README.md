@@ -24,5 +24,8 @@ This repo contains the code for the 4WD bot and the ODOM code [to do] that will 
 3. Motor_fr = 15,14
 4. Motor_br = 19,18
 
+### IMU [MPU6050]:
+1. SDA = 17
+2. SCL = 16
 
    
