@@ -47,8 +47,8 @@ const uint8_t LB_FORW = 22;
 const uint8_t LB_BACK = 23;
  
 const uint8_t RF_PWM = 0;
-const uint8_t RF_FORW = 17;
-const uint8_t RF_BACK = 16;
+const uint8_t RF_FORW = 15;
+const uint8_t RF_BACK = 14;
 
 const uint8_t RB_PWM = 1;
 const uint8_t RB_FORW = 19;
