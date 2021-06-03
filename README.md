@@ -28,4 +28,19 @@ This repo contains the code for the 4WD bot and the ODOM code [to do] that will 
 1. SDA = 17
 2. SCL = 16
 
-   
+# Setting Up Raspberry Pi and Teensy
+
+This project is built on ROS Melodic, use Ubuntu 18. (32 bit)
+
+
+
+
+
+
+
+# Steps to Start the bot
+1. In both, RPi and desktop setup ROS network name resolution. refer section 2 of [this link](http://wiki.ros.org/ROS/NetworkSetup). In our case SSH in  RPi:  `export ROS_IP=192.168.0.54`  and in desktop: `export ROS_IP=192.168.0.70` 
+2. As we are running ROS Core in RPi, in both desktop and RPi: `export ROS_MASTER_URI=http://192.168.0.54:11311` (refer [this link](http://wiki.ros.org/ROS/Tutorials/MultipleMachines)).
+3. It should be noted that it is recommended to perform step 1 & 2 to every terminal that you open.
+4. In RPi: `roscore` and `rosrun rosserial_python serial_node.py /dev/ttyACM0` 
+5. In desktop, you may use [teleop_twist_keyboard](http://wiki.ros.org/teleop_twist_keyboard): `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`

@@ -296,7 +296,7 @@ int old_ct1=0;
 int old_ct2=0;
 int old_ct3=0;
 int old_ct4=0;
-float ticks_per_meter = 33000.1;
+float ticks_per_meter = 2445.45;
 
 void loop() {
   
