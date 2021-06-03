@@ -30,7 +30,7 @@ This repo contains the code for the 4WD bot and the ODOM code [to do] that will 
 
 # Setting Up Raspberry Pi and Teensy
 
-This project is built on ROS Melodic, use Ubuntu 18. (32 bit)
+We used RPi 4- 4GB, This project is built on ROS Melodic, use Ubuntu 18 (32 bit, using 64 bit won't support Pi Cam). For a RPi camera server, you may follow [this](https://ubuntu.com/blog/how-to-stream-video-with-raspberry-pi-hq-camera-on-ubuntu-core) guide (note: In the tutorial, /boot/uboot/config.txt may not be availabe instead it will be available /boot/firmware/config.txt). It should be noted that [raspi-config](https://ubuntu.com/blog/how-to-stream-video-with-raspberry-pi-hq-camera-on-ubuntu-core) must be installed to activate Pi Camera.
 
 
 
