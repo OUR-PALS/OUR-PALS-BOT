@@ -16,8 +16,8 @@ double Setpoint_fr, Input_fr, Output_fr;
 double Setpoint_bl, Input_bl, Output_bl;
 double Setpoint_br, Input_br, Output_br;
 
-double aggKp=450, aggKi=250, aggKd=4;
-double consKp=280, consKi=120, consKd=1;
+double aggKp=550, aggKi=350, aggKd=7;
+double consKp=280, consKi=220, consKd=1;
 
 PID myPID_fl(&Input_fl, &Output_fl, &Setpoint_fl, aggKp, aggKi, aggKd, DIRECT);
 PID myPID_fr(&Input_fr, &Output_fr, &Setpoint_fr, aggKp, aggKi, aggKd, DIRECT);
@@ -51,8 +51,8 @@ const uint8_t RF_FORW = 15;
 const uint8_t RF_BACK = 14;
 
 const uint8_t RB_PWM = 1;
-const uint8_t RB_FORW = 19;
-const uint8_t RB_BACK = 18;
+const uint8_t RB_FORW = 17;
+const uint8_t RB_BACK = 16;
 
 
 // speed = 0? help? pid not reset?

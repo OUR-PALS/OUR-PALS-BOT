@@ -22,11 +22,11 @@ This repo contains the code for the 4WD bot and the ODOM code [to do] that will 
 1. Motor_fl = 20,21
 2. Motor_bl = 22,23
 3. Motor_fr = 15,14
-4. Motor_br = 19,18
+4. Motor_br = 17,16
 
 ### IMU [MPU6050]:
-1. SDA = 17
-2. SCL = 16
+1. SDA = 18
+2. SCL = 19
 
 # Setting Up Raspberry Pi and Teensy
 
