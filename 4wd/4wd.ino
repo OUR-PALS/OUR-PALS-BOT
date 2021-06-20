@@ -329,10 +329,10 @@ void loop() {
   Input_br = (float(ct4 - old_ct4) / ticks_per_meter) / ((now - prev) / 1000.0);
  
   // Use aggresive pid paramaters if gap > 0.1 else conservative
-  bool gap1 = abs(Setpoint_fl - Input_fl) < 0.12;
-  bool gap2 = abs(Setpoint_fr - Input_fr) < 0.12;
-  bool gap3 = abs(Setpoint_bl - Input_bl) < 0.12;
-  bool gap4 = abs(Setpoint_br - Input_br) < 0.12;
+  bool gap1 = abs(Setpoint_fl - Input_fl) < 0.05;
+  bool gap2 = abs(Setpoint_fr - Input_fr) < 0.05;
+  bool gap3 = abs(Setpoint_bl - Input_bl) < 0.05;
+  bool gap4 = abs(Setpoint_br - Input_br) < 0.05;
   
   if(gap1 && gap2 && gap3 && gap4){
     myPID_fl.SetTunings(consKp, consKi, consKd);
