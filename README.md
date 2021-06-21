@@ -48,6 +48,6 @@ We used RPi 4- 4GB, This project is built on ROS Melodic, use Ubuntu 18 (32 bit,
 1. In both, RPi and desktop setup ROS network name resolution. refer section 2 of [this link](http://wiki.ros.org/ROS/NetworkSetup). In our case SSH in  RPi:  `export ROS_IP=192.168.0.52`  and in desktop: `export ROS_IP=192.168.0.70` 
 2. As we are running ROS Core in RPi, in both desktop and RPi: `export ROS_MASTER_URI=http://192.168.0.52:11311` (refer [this link](http://wiki.ros.org/ROS/Tutorials/MultipleMachines)).
 3. It should be noted that it is recommended to perform step 1 & 2 to every terminal that you open.
-4. In RPi: `roscore` and `rosrun rosserial_python serial_node.py /dev/ttyACM0` 
+4. In RPi: `roscore`, `rosrun rosserial_python serial_node.py /dev/ttyACM0 __name:serial1` and `rosrun rosserial_python serial_node.py /dev/ttyACM1 __name:serial2`  
 5. In desktop, you may use [teleop_twist_keyboard](http://wiki.ros.org/teleop_twist_keyboard) (for testing): `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
 6. Install the [OURPALS IRIS](https://github.com/OUR-PALS/ourpals_iris.git) package using a Catkin workspace. To run the script: `rosrun ourpals_iris iris_realtime.py`
