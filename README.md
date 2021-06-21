@@ -1,5 +1,5 @@
 # OUR-PALS-BOT
-This repo contains the code for the 4WD bot and the ODOM code [to do] that will be offloaded to RPI 4b.
+This repo contains the Arduino firmware for the 4WD bot, we used Teensy 4.1 for this project.
 
 ### Topics that are subscribed by the robot:
 1. cmd_vel
