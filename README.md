@@ -1,17 +1,18 @@
 # OUR-PALS-BOT
+  *It should be noted that though most commits are from [suryachereddy](https://github.com/OUR-PALS/OUR-PALS-BOT), 3 others ([darshan1215](https://github.com/darshan1215),[Amulya Ganti](https://github.com/ganti0907) and [Sriya027](https://github.com/Sriya027)) have also contributed for the project (including parts of the code). We thank [Dr. Chakravarthula Kiran](https://github.com/kirandotc) (our faculty guide) and [Srujan Panuganti](https://github.com/srujanpanuganti) for their valuable inputs to the project.*
 This repo contains the Arduino firmware for the 4WD bot, we used Teensy 4.1 for this project.
 
 ### Topics that are subscribed by the robot:
-1. cmd_vel
+1. /cmd_vel
 
 ### Topics that are published by the robot [these are the individual encoder ticks of each motor]:
-1. lfwheel
-2. lbwheel
-3. rfwheel
-4. rbwheel
+1. /lfwheel
+2. /lbwheel
+3. /rfwheel
+4. /rbwheel
 
 
-# Pin binding:
+# Pin binding for Teensy 4.1:
 ### Encoders:
 1. Encoder_fl = 9,8
 2. Encoder_bl = 11,10
@@ -31,6 +32,7 @@ This repo contains the Arduino firmware for the 4WD bot, we used Teensy 4.1 for 
 4. PWM_BR = 1
 
 ### IMU [MPU6050]:
+*We have not used it for this project now, but our future plan is to develop better localisation by fusing IMU data with motor ticks. You're free to implement this and submit a pull request to our repository(-ies).*
 1. SDA = 18
 2. SCL = 19
 
@@ -45,9 +47,12 @@ We used RPi 4- 4GB, This project is built on ROS Melodic, use Ubuntu 18 (32 bit,
 
 
 # Steps to Start the bot
-1. In both, RPi and desktop setup ROS network name resolution. refer section 2 of [this link](http://wiki.ros.org/ROS/NetworkSetup). In our case SSH in  RPi:  `export ROS_IP=192.168.0.52`  and in desktop: `export ROS_IP=192.168.0.70` 
-2. As we are running ROS Core in RPi, in both desktop and RPi: `export ROS_MASTER_URI=http://192.168.0.52:11311` (refer [this link](http://wiki.ros.org/ROS/Tutorials/MultipleMachines)).
+1. In both, RPi and desktop setup ROS network name resolution. refer section 2 of [this link](http://wiki.ros.org/ROS/NetworkSetup). In our case SSH in  RPi:  `export ROS_IP=<RPi-IP-Address>`  and in desktop: `export ROS_IP=<desktop-IP-Address>`. *(you can find the IP address of both using a simple IP scanning app on your mobile or desktop connected to the same WLAN)*
+2. As we are running ROS Core in RPi, in both desktop and RPi: `export ROS_MASTER_URI=<RPi-IP-Address>` (refer [this link](http://wiki.ros.org/ROS/Tutorials/MultipleMachines)).
 3. It should be noted that it is recommended to perform step 1 & 2 to every terminal that you open.
 4. In RPi: `roscore`, `rosrun rosserial_python serial_node.py /dev/ttyACM0 __name:=serial1` and `rosrun rosserial_python serial_node.py /dev/ttyACM1 __name:=serial2`  
 5. In desktop, you may use [teleop_twist_keyboard](http://wiki.ros.org/teleop_twist_keyboard) (for testing): `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
 6. Install the [OURPALS IRIS](https://github.com/OUR-PALS/ourpals_iris.git) package using a Catkin workspace. To run the script: `rosrun ourpals_iris iris_realtime.py`
+
+
+*For any doubts regarding the project feel free to ask in "issues".*
