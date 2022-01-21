@@ -47,6 +47,7 @@ We used RPi 4- 4GB, This project is built on ROS Melodic, use Ubuntu 18 (32 bit,
 
 
 # Steps to Start the bot
+*Please clone and build the [ourpals_iris](https://github.com/OUR-PALS/ourpals_iris) package on your desktop/laptop before you proceed.*
 1. In both, RPi and desktop setup ROS network name resolution. refer section 2 of [this link](http://wiki.ros.org/ROS/NetworkSetup). In our case SSH in  RPi:  `export ROS_IP=<RPi-IP-Address>`  and in desktop: `export ROS_IP=<desktop-IP-Address>`. *(you can find the IP address of both using a simple IP scanning app on your mobile or desktop connected to the same WLAN)*
 2. As we are running ROS Core in RPi, in both desktop and RPi: `export ROS_MASTER_URI=<RPi-IP-Address>` (refer [this link](http://wiki.ros.org/ROS/Tutorials/MultipleMachines)).
 3. It should be noted that it is recommended to perform step 1 & 2 to every terminal that you open.
