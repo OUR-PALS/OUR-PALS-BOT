@@ -1,5 +1,5 @@
 # OUR-PALS-BOT
-  *It should be noted that though most commits are from [suryachereddy](https://github.com/OUR-PALS/OUR-PALS-BOT), 3 others ([darshan1215](https://github.com/darshan1215),[Amulya Ganti](https://github.com/ganti0907) and [Sriya027](https://github.com/Sriya027)) have also contributed for the project (including parts of the code). We thank [Dr. Chakravarthula Kiran](https://github.com/kirandotc) (our faculty guide) and [Srujan Panuganti](https://github.com/srujanpanuganti) for their valuable inputs to the project.*
+  *It should be noted that though most commits are from [suryachereddy](https://github.com/OUR-PALS/OUR-PALS-BOT), 3 others ([darshan1215](https://github.com/darshan1215), [Amulya Ganti](https://github.com/ganti0907) and [Sriya027](https://github.com/Sriya027)) have also contributed for the project (including parts of the code). We thank [Dr. Chakravarthula Kiran](https://github.com/kirandotc) (our faculty guide) and [Srujan Panuganti](https://github.com/srujanpanuganti) for their valuable inputs to the project.*
 This repo contains the Arduino firmware for the 4WD bot, we used Teensy 4.1 for this project.
 
 ### Topics that are subscribed by the robot:
@@ -36,14 +36,9 @@ This repo contains the Arduino firmware for the 4WD bot, we used Teensy 4.1 for 
 1. SDA = 18
 2. SCL = 19
 
-# Setting Up Raspberry Pi and Teensy
-
-We used RPi 4- 4GB, This project is built on ROS Melodic, use Ubuntu 18 (32 bit, using 64 bit won't support Pi Cam). For a RPi camera server, you may follow [this](https://ubuntu.com/blog/how-to-stream-video-with-raspberry-pi-hq-camera-on-ubuntu-core) guide (note: In the tutorial, /boot/uboot/config.txt may not be availabe instead it will be available /boot/firmware/config.txt). It should be noted that [raspi-config](https://ubuntu.com/blog/how-to-stream-video-with-raspberry-pi-hq-camera-on-ubuntu-core) must be installed to activate Pi Camera.
-
-
-
-
-
+# Setting Up Camera Stream on Raspberry Pi
+It should also be noted that we didn't integrate video stream with ROS. Instead we used used a WLAN based RPi camera stream server. For a RPi camera server, you may follow [this](https://ubuntu.com/blog/how-to-stream-video-with-raspberry-pi-hq-camera-on-ubuntu-core) guide (note: In the tutorial, /boot/uboot/config.txt may not be availabe instead it will be available /boot/firmware/config.txt). It should be noted that [raspi-config](https://ubuntu.com/blog/how-to-stream-video-with-raspberry-pi-hq-camera-on-ubuntu-core) must be installed to activate Pi Camera. 
+We've used RPi 4- 4GB. **use Ubuntu 18 32 bit, using 64 bit won't support Pi Cam.**
 
 
 # Steps to Start the bot
@@ -53,7 +48,9 @@ We used RPi 4- 4GB, This project is built on ROS Melodic, use Ubuntu 18 (32 bit,
 3. It should be noted that it is recommended to perform step 1 & 2 to every terminal that you open.
 4. In RPi: `roscore`, `rosrun rosserial_python serial_node.py /dev/ttyACM0 __name:=serial1` and `rosrun rosserial_python serial_node.py /dev/ttyACM1 __name:=serial2`  
 5. In desktop, you may use [teleop_twist_keyboard](http://wiki.ros.org/teleop_twist_keyboard) (for testing): `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
-6. Install the [OURPALS IRIS](https://github.com/OUR-PALS/ourpals_iris.git) package using a Catkin workspace. To run the script: `rosrun ourpals_iris iris_realtime.py`
+6. Build the [OURPALS IRIS](https://github.com/OUR-PALS/ourpals_iris.git) package using a Catkin workspace. To run the script: `rosrun ourpals_iris iris_realtime.py`
 
 
 *For any doubts regarding the project feel free to ask in "issues".*
+
+**Please drop a star ⭐ if you like the project.**
